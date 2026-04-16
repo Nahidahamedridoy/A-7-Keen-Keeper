@@ -1,5 +1,8 @@
 import React from 'react';
 
+const statusObj = { "on track" : "bg-green-700" , "active" : "bg-yellow-500" , "overdue" : "bg-red-500"}
+console.log(statusObj)
+
 const FriendCard = ({friend}) => {
     return (
         <div className="card bg-base-100 w-96 shadow-sm">
@@ -18,7 +21,7 @@ const FriendCard = ({friend}) => {
                             </h2>
                         </div>
                         <div className="mt-4 flex justify-center">
-                            <span className="px-4 font-semibold py-1 text-xs  ">
+                            <span className={`px-4 font-semibold py-1 text-xs  text-white rounded-full mb-4 ${statusObj[friend.status]}`}>
                                 {friend.status}
                             </span>
                         </div>
