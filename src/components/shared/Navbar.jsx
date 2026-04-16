@@ -1,17 +1,23 @@
 import React from 'react';
 import { BiHomeAlt2 } from 'react-icons/bi';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
         <nav className='shadow'>
-            <div className="flex justify-between gap-4 items-center py-[8px] container mx-auto"> 
+            <div className="flex justify-between gap-4 items-center py-[8px] container mx-auto">
                 <h1 className="font-bold text-3xl">Keen<span className='text-[#244D3F]'>Keeper</span></h1>
-            <ul className='flex justify-between gap-4 items-center'>
-                <li><button className='btn bg-green-800 text-white'><Link to={"/"}><BiHomeAlt2 />Home</Link></button></li>
-                <li><Link to={"/timeline"}>Timeline</Link></li>
-                <li><Link to={"/states"}>Stats</Link></li>
-            </ul>
+                <ul className='flex justify-between gap-4 items-center'>
+                    <li>
+                        <button className='btn bg-green-800 text-white'><NavLink to={"/"}><BiHomeAlt2 />Home</NavLink></button>
+                    </li>
+                    <li>
+                        <NavLink to={"/timeline"}>Timeline</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"/states"}>Stats</NavLink>
+                    </li>
+                </ul>
             </div>
         </nav>
     );
