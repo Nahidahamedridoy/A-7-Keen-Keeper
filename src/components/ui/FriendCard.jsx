@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const statusObj = { "on track" : "bg-green-700" , "active" : "bg-yellow-500" , "overdue" : "bg-red-500"}
 console.log(statusObj)
 
 const FriendCard = ({friend}) => {
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
+        <Link to={`/homepage/${friend.id}`} className="card bg-base-100 w-96 shadow-sm">
                         <figure>
                             <img className='rounded-full m-4'
                                 src={friend.picture}
@@ -25,7 +26,7 @@ const FriendCard = ({friend}) => {
                                 {friend.status}
                             </span>
                         </div>
-                    </div>
+                    </Link>
     );
 };
 

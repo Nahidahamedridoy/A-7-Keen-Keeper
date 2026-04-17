@@ -16,11 +16,12 @@ export const router = createBrowserRouter(
           // path: "/",
           index:true ,
           element: <Homepage/>,
-          loader: ()=> fetch ("/public/data.json")
+          loader: ()=> fetch ("/data.json")
         },
         {
             path:"/homepage/:id",
-            element: <FriendsDetails/>
+            element: <FriendsDetails/>,
+            loader: ()=> fetch ("/data.json")
         },
         {
           path: "/timeline",

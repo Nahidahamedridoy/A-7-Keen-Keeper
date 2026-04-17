@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
-        <nav className='shadow'>
+        <nav className='navbar shadow'>
             <div className="flex justify-between gap-4 items-center py-[8px] container mx-auto">
                 <h1 className="font-bold text-3xl">Keen<span className='text-[#244D3F]'>Keeper</span></h1>
                 <ul className='flex justify-between gap-4 items-center'>

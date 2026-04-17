@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = () => {
     return (
-        <div className='grid grid-cols-4 container mx-auto gap-5 mt-10 mb-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 container mx-auto gap-5 mt-10 mb-10'>
 
            <div className=" p-8  bg-white rounded-2xl">
             <h2 className='font-semibold text-2xl text-center text-[#244D3F]'>10</h2>

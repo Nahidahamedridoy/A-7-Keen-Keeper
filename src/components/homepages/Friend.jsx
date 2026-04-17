@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import FriendCard from '../ui/FriendCard';
-import UseApps from '../../hooks/useApps';
+import useApps from '../../hooks/useApps';
 
 
 const Friend = () => {
 
-    const { friends  } = UseApps();
+    const { friends  } = useApps();
     console.log(friends, "obj")
 
     return (
@@ -16,7 +16,7 @@ const Friend = () => {
             </div>
             total friend : {friends.length}
 
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                 {friends.map((friend, ind) => {
                     return (
                         <FriendCard key={ind} friend={friend} />

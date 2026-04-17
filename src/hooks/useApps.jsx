@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const UseApps = () => {
+const useApps = () => {
 
 
-    const [friends, setApps] = useState([]);
+    const [friends, setFriends] = useState([]);
 
     useEffect(() => {
 
         const fetchData = async () => {
-            const res = await fetch("/public/data.json");
+            const res = await fetch("/data.json");
             const data = await res.json();
             console.log(data);
-            setApps(data);
+            setFriends(data);
         };
         fetchData();
     }, []);
@@ -19,4 +19,4 @@ const UseApps = () => {
     return { friends };
 };
 
-export default UseApps;
+export default useApps;
