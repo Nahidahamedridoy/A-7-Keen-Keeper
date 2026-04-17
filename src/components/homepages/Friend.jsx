@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
 import FriendCard from '../ui/FriendCard';
+import UseApps from '../../hooks/useApps';
+
 
 const Friend = () => {
 
-    const friends = useLoaderData();
-    const data = useLoaderData()
-
-    // console.log(data, "data from homepage");
-
-
-    console.log(friends, "hello from setFriends")
+    const { friends  } = UseApps();
+    console.log(friends, "obj")
 
     return (
         <div className='container mx-auto my-[60px]'>
