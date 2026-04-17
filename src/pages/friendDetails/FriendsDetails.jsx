@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import useApps from "../../hooks/useApps";
 
 import AudioImg from '../../assets/call.png';
 import TextImg from '../../assets/text.png';
 import videoImg from '../../assets/video.png';
+import { InstallAppsContext } from '../../context/InstallAppsContext';
 
 
 const FriendsDetails = () => {
@@ -13,14 +14,20 @@ const FriendsDetails = () => {
     // const { friends } = useApps();
     // console.log(friends)
     const friends = useLoaderData();
-    console.log(friends)
+    // console.log(friends)
 
-    console.log(friends, "friends")
+    const {calledFriends , setCalledFriends} = useContext(InstallAppsContext)
+
+    // console.log(friends, "friends")
     const expectedApp = friends.find((friend) => String(friend.id) === id);
+    // console.log(id, "id");
 
-    console.log(id, "id");
+    const handleCalledFriend = () =>{
+        setCalledFriends([...calledFriends , expectedApp]);
+    }
 
-    console.log(expectedApp, "expectedApp");
+    console.log(calledFriends)
+
     return (
         <div className="min-h-screen bg-gray-100 p-4 md:p-8">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -100,20 +107,21 @@ const FriendsDetails = () => {
                         <h3 className="font-semibold text-lg mb-4">Quick Check-In</h3>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            
+
                              {/* audio button */}
-                            <button className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
+
+                            <button onClick={handleCalledFriend } className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
                                 <img src={AudioImg} alt="" />
                                 <span>Call</span>
                             </button>
 
                             {/* text button */}
-                            <button className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
+                            <button onClick={handleCalledFriend} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
                                 <img src={TextImg} alt="" />
                                 <span>Text</span>
                             </button>
                             {/* video button */}
-                            <button className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
+                            <button onClick={handleCalledFriend} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-200">
                                 <img src={videoImg} alt="" />
                                 <span>Video</span>
                             </button>
