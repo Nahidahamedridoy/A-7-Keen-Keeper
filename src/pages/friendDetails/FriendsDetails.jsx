@@ -6,6 +6,7 @@ import AudioImg from '../../assets/call.png';
 import TextImg from '../../assets/text.png';
 import videoImg from '../../assets/video.png';
 import { InstallAppsContext } from '../../context/InstallAppsContext';
+import { toast } from 'react-toastify';
 
 
 const FriendsDetails = () => {
@@ -22,11 +23,13 @@ const FriendsDetails = () => {
     const expectedApp = friends.find((friend) => String(friend.id) === id);
     // console.log(id, "id");
 
-    const handleCalledFriend = () =>{
-        setCalledFriends([...calledFriends , expectedApp]);
+    const handleCalledFriend = (type) =>{
+
+        setCalledFriends([...calledFriends , {...expectedApp , type}]);
+        toast.success(`${expectedApp.name} Calling Successful!`);
     }
 
-    console.log(calledFriends)
+    // console.log(calledFriends)
 
     return (
         <div className="min-h-screen bg-gray-100 p-4 md:p-8">
@@ -110,18 +113,18 @@ const FriendsDetails = () => {
 
                              {/* audio button */}
 
-                            <button onClick={handleCalledFriend } className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
+                            <button onClick={() => handleCalledFriend ("call") } className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
                                 <img src={AudioImg} alt="" />
                                 <span>Call</span>
                             </button>
 
                             {/* text button */}
-                            <button onClick={handleCalledFriend} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
+                            <button onClick={() => handleCalledFriend ("text")} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-50">
                                 <img src={TextImg} alt="" />
                                 <span>Text</span>
                             </button>
                             {/* video button */}
-                            <button onClick={handleCalledFriend} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-200">
+                            <button onClick={() => handleCalledFriend ("video")} className="border rounded-xl py-6 flex flex-col items-center gap-2 hover:bg-gray-200">
                                 <img src={videoImg} alt="" />
                                 <span>Video</span>
                             </button>

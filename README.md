@@ -1,16 +1,70 @@
-# React + Vite
+# 📱 Keen Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Project Overview
 
-Currently, two official plugins are available:
+**Keen Keeper** is a communication-based web application where users can connect with their friends through audio calls, video calls, and text messaging. It provides a simple and interactive way to stay connected in real-time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 📊 **Pie Chart Visualization**
+  View data insights and usage statistics through an interactive pie chart.
 
-## Expanding the ESLint configuration
+* 🕒 **Timeline History**
+  Track all your communication history (calls, messages) in a clean timeline format.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 👥 **All Friends List**
+  Easily manage and access your friends list to start conversations quickly.
+
+---
+
+## 🛠️ Technologies Used
+
+* ⚛️ React.js
+* 🎨 Tailwind CSS
+* 🌼 DaisyUI
+
+---
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/keen-keeper.git
+
+# Navigate to the project folder
+cd keen-keeper
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+---
+
+## 📸 Screenshots
+
+*Add your project screenshots here*
+
+---
+
+## 💡 Future Improvements
+
+* Real-time notifications
+* Group calling feature
+* Dark mode support
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork this repository and contribute to improve the project.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
